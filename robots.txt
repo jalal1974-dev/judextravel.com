@@ -1,0 +1,93 @@
+# AL JUDE Travel & Tourism — robots.txt
+# الجود للسياحة والسفر
+# Updated: 2026-03-08 — GEO Optimized
+
+# ═══ TRADITIONAL SEARCH ENGINES ═══
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+
+# ═══ AI SEARCH ENGINES & CRAWLERS ═══
+# ChatGPT / OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic (Claude)
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Google Gemini / AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot-AI
+Allow: /
+
+# Microsoft Copilot / Bing AI
+User-agent: BingPreview
+Allow: /
+
+# Common Crawler (training data)
+User-agent: CCBot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Bytedance
+User-agent: Bytespider
+Allow: /
+
+# ═══ GENERAL ═══
+User-agent: *
+Allow: /
+Crawl-delay: 1
+
+# ═══ SITEMAPS ═══
+Sitemap: https://www.aljudetravel.com/sitemap.xml
+Sitemap: https://www.aljudetravel.com/sitemap-images.xml
+
+# ═══ BLOCK BAD ACTORS (keep quality signals clean) ═══
+User-agent: AhrefsBot
+Crawl-delay: 30
+
+User-agent: SemrushBot
+Crawl-delay: 30
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
