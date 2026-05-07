@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Jude Travel Agency - Charter Flights from/to Jordan" data-ar="الجود للسياحة والسفر - رحلات طيران مستأجرة من وإلى الأردن">الجود للسياحة والسفر - رحلات طيران مستأجرة من وإلى الأردن</title>
+    <meta name="description" content="اكتشف أفضل عروض الرحلات المستأجرة من الأردن إلى وجهات سياحية مميزة مع الجود للسياحة والسفر">
+    <meta name="description-en" content="Discover the best charter flight deals from Jordan to premium tourist destinations with Jude Travel Agency">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Configure Tailwind for RTL -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'cairo': ['Cairo', 'sans-serif']
+                    },
+                    colors: {
+                        'jude-blue': '#1e40af',
+                        'jude-orange': '#f97316'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-cairo bg-gray-50">
+    
+    <!-- Header -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/1c1b77f70820d81b7dc05973b06f982e" 
+                         alt="Al Jude Travel Logo" class="h-12 w-12 rounded-full">
+                    <div>
+                        <h1 class="text-xl font-bold text-jude-blue">AL JUDE</h1>
+                        <p class="text-sm text-gray-600" data-en="Travel & Tourism Agency" data-ar="الجود للسياحة والسفر">الجود للسياحة والسفر</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <div class="hidden md:flex items-center space-x-8 space-x-reverse">
+                    <a href="#home" class="text-jude-blue hover:text-jude-orange transition-colors" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+                    <a href="#flights" class="text-gray-700 hover:text-jude-orange transition-colors" data-en="Flights" data-ar="الرحلات">الرحلات</a>
+                    <a href="#about" class="text-gray-700 hover:text-jude-orange transition-colors" data-en="About Us" data-ar="من نحن">من نحن</a>
+                    <a href="#contact" class="text-gray-700 hover:text-jude-orange transition-colors" data-en="Contact" data-ar="اتصل بنا">اتصل بنا</a>
+                    
+                    <!-- Currency Selector -->
+                    <div class="relative">
+                        <button id="currency-toggle" class="flex items-center space-x-2 space-x-reverse text-gray-700 hover:text-jude-blue transition-colors border border-gray-300 rounded-lg px-3 py-1">
+                            <i class="fas fa-coins text-sm"></i>
+                            <span class="text-sm font-medium current-currency">🇯🇴 دينار أردني</span>
+                        </button>
+                        <div id="currency-dropdown" class="absolute left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-50 hidden">
+                            <div class="p-2">
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button class="currency-option flex items-center space-x-2 space-x-reverse p-2 rounded hover:bg-gray-50 text-sm" data-currency="JOD">
+                                        <span>🇯🇴</span>
+                                        <span data-ar="دينار أردني" data-en="Jordanian Dinar">دينار أردني</span>
+                                    </button>
+                                    <button class="currency-option flex items-center space-x-2 space-x-reverse p-2 rounded hover:bg-gray-50 text-sm" data-currency="USD">
+                                        <span>🇺🇸</span>
+                                        <span data-ar="دولار أمريكي" data-en="US Dollar">دولار أمريكي</span>
+                                    </button>
+                                    <button class="currency-option flex items-center space-x-2 space-x-reverse p-2 rounded hover:bg-gray-50 text-sm" data-currency="EUR">
+                                        <span>🇪🇺</span>
+                                        <span data-ar="يورو" data-en="Euro">يورو</span>
+                                    </button>
+                                    <button class="currency-option flex items-center space-x-2 space-x-reverse p-2 rounded hover:bg-gray-50 text-sm" data-currency="GBP">
+                                        <span>🇬🇧</span>
+                                        <span data-ar="جنيه إسترليني" data-en="British Pound">جنيه إسترليني</span>
+                                    </button>
+                                    <button class="currency-option flex items-center space-x-2 space-x-reverse p-2 rounded hover:bg-gray-50 text-sm" data-currency="SAR">
+                                        <span>🇸🇦</span>
+                                        <span data-ar="ريال سعودي" data-en="Saudi Riyal">ريال سعودي</span>
+                                    </button>
+                                    <button class="currency-option flex items-center space-x-2 space-x-reverse p-2 rounded hover:bg-gray-50 text-sm" data-currency="AED">
+                                        <span>🇦🇪</span>
+                                        <span data-ar="درهم إماراتي" data-en="UAE Dirham">درهم إماراتي</span>
+                                    </button>
+                                    <button class="currency-option flex items-center space-x-2 space-x-reverse p-2 rounded hover:bg-gray-50 text-sm" data-currency="TRY">
+                                        <span>🇹🇷</span>
+                                        <span data-ar="ليرة تركية" data-en="Turkish Lira">ليرة تركية</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Language Toggle -->
+                    <button id="language-toggle" class="flex items-center space-x-2 space-x-reverse text-gray-700 hover:text-jude-blue transition-colors border border-gray-300 rounded-lg px-3 py-1">
+                        <i class="fas fa-globe text-sm"></i>
+                        <span class="text-sm font-medium" id="current-lang">العربية</span>
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center space-x-3 space-x-reverse md:hidden">
+                    <!-- Mobile Currency Toggle -->
+                    <button id="mobile-currency-toggle" class="text-jude-blue hover:text-jude-orange">
+                        <i class="fas fa-coins text-lg"></i>
+                    </button>
+                    <!-- Mobile Language Toggle -->
+                    <button id="mobile-language-toggle" class="text-jude-blue hover:text-jude-orange">
+                        <i class="fas fa-globe text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-jude-blue hover:text-jude-orange">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200">
+                <div class="flex flex-col space-y-3 mt-4">
+                    <a href="#home" class="text-jude-blue hover:text-jude-orange transition-colors" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+                    <a href="#flights" class="text-gray-700 hover:text-jude-orange transition-colors" data-en="Flights" data-ar="الرحلات">الرحلات</a>
+                    <a href="#about" class="text-gray-700 hover:text-jude-orange transition-colors" data-en="About Us" data-ar="من نحن">من نحن</a>
+                    <a href="#contact" class="text-gray-700 hover:text-jude-orange transition-colors" data-en="Contact" data-ar="اتصل بنا">اتصل بنا</a>
+                    
+                    <!-- Mobile Currency Option -->
+                    <div class="pt-3 border-t border-gray-100">
+                        <div class="mb-3">
+                            <span class="text-xs text-gray-500 block mb-2" data-ar="اختر العملة:" data-en="Select Currency:">اختر العملة:</span>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button class="currency-option mobile-currency-btn flex items-center space-x-2 space-x-reverse p-2 rounded bg-gray-50 hover:bg-gray-100 text-xs" data-currency="JOD">
+                                    <span>🇯🇴</span>
+                                    <span data-ar="JOD" data-en="JOD">JOD</span>
+                                </button>
+                                <button class="currency-option mobile-currency-btn flex items-center space-x-2 space-x-reverse p-2 rounded bg-gray-50 hover:bg-gray-100 text-xs" data-currency="USD">
+                                    <span>🇺🇸</span>
+                                    <span data-ar="USD" data-en="USD">USD</span>
+                                </button>
+                                <button class="currency-option mobile-currency-btn flex items-center space-x-2 space-x-reverse p-2 rounded bg-gray-50 hover:bg-gray-100 text-xs" data-currency="EUR">
+                                    <span>🇪🇺</span>
+                                    <span data-ar="EUR" data-en="EUR">EUR</span>
+                                </button>
+                                <button class="currency-option mobile-currency-btn flex items-center space-x-2 space-x-reverse p-2 rounded bg-gray-50 hover:bg-gray-100 text-xs" data-currency="GBP">
+                                    <span>🇬🇧</span>
+                                    <span data-ar="GBP" data-en="GBP">GBP</span>
+                                </button>
+                                <button class="currency-option mobile-currency-btn flex items-center space-x-2 space-x-reverse p-2 rounded bg-gray-50 hover:bg-gray-100 text-xs" data-currency="SAR">
+                                    <span>🇸🇦</span>
+                                    <span data-ar="SAR" data-en="SAR">SAR</span>
+                                </button>
+                                <button class="currency-option mobile-currency-btn flex items-center space-x-2 space-x-reverse p-2 rounded bg-gray-50 hover:bg-gray-100 text-xs" data-currency="AED">
+                                    <span>🇦🇪</span>
+                                    <span data-ar="AED" data-en="AED">AED</span>
+                                </button>
+                                <button class="currency-option mobile-currency-btn flex items-center space-x-2 space-x-reverse p-2 rounded bg-gray-50 hover:bg-gray-100 text-xs" data-currency="TRY">
+                                    <span>🇹🇷</span>
+                                    <span data-ar="TRY" data-en="TRY">TRY</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Mobile Language Option -->
+                        <button class="text-gray-700 hover:text-jude-orange transition-colors flex items-center space-x-2 space-x-reverse" onclick="toggleLanguage()">
+                            <i class="fas fa-globe"></i>
+                            <span id="mobile-lang-text" data-en="Switch to العربية" data-ar="Switch to English">Switch to English</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-gradient-to-r from-jude-blue to-blue-600 text-white py-20 overflow-hidden">
+        <!-- Background Airline Photos Slider -->
+        <div class="absolute inset-0 hero-slider">
+            <div class="slide active">
+                <img src="images/royal-jordanian-787.jpg" alt="Royal Jordanian Boeing 787" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+            </div>
+            <div class="slide">
+                <img src="images/fly-jordan-737.jpg" alt="Fly Jordan Boeing 737" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+            </div>
+            <div class="slide">
+                <img src="images/jordan-aviation-737.jpg" alt="Jordan Aviation Boeing 737" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+            </div>
+            <div class="slide">
+                <img src="images/flynas-a320.jpg" alt="Flynas Airbus A320" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+            </div>
+            <div class="slide">
+                <img src="images/egyptair-787.jpg" alt="EgyptAir Boeing 787" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+            </div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6" 
+                    data-en="Discover the World with Jude Travel" 
+                    data-ar="اكتشف العالم مع الجود للسياحة">اكتشف العالم مع الجود للسياحة</h1>
+                <p class="text-xl md:text-2xl mb-8 opacity-90" 
+                   data-en="Charter flights to the most beautiful tourist destinations at the best prices" 
+                   data-ar="رحلات طيران مستأجرة إلى أجمل الوجهات السياحية بأفضل الأسعار">رحلات طيران مستأجرة إلى أجمل الوجهات السياحية بأفضل الأسعار</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToFlights()" class="bg-jude-orange hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                        <i class="fas fa-plane ml-2 mr-2"></i>
+                        <span data-en="Explore Flights" data-ar="اكتشف الرحلات">اكتشف الرحلات</span>
+                    </button>
+                    <button onclick="scrollToContact()" class="bg-transparent border-2 border-white hover:bg-white hover:text-jude-blue text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                        <i class="fas fa-phone ml-2 mr-2"></i>
+                        <span data-en="Book Now" data-ar="احجز الآن">احجز الآن</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide Indicators -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 space-x-reverse z-20">
+            <button class="slide-indicator active" data-slide="0" onclick="goToSlide(0)"></button>
+            <button class="slide-indicator" data-slide="1" onclick="goToSlide(1)"></button>
+            <button class="slide-indicator" data-slide="2" onclick="goToSlide(2)"></button>
+            <button class="slide-indicator" data-slide="3" onclick="goToSlide(3)"></button>
+            <button class="slide-indicator" data-slide="4" onclick="goToSlide(4)"></button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" 
+                    data-en="Why Choose Jude Travel?" 
+                    data-ar="لماذا تختار الجود للسياحة؟">لماذا تختار الجود للسياحة؟</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" 
+                   data-en="We provide the best travel and tourism services with years of experience in this field" 
+                   data-ar="نقدم لك أفضل خدمات السفر والسياحة مع خبرة تزيد عن سنوات في هذا المجال">نقدم لك أفضل خدمات السفر والسياحة مع خبرة تزيد عن سنوات في هذا المجال</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                    <div class="bg-jude-blue text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-plane text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3" 
+                        data-en="Comfortable Charter Flights" 
+                        data-ar="رحلات مستأجرة مريحة">رحلات مستأجرة مريحة</h3>
+                    <p class="text-gray-600" 
+                       data-en="Comfortable and safe charter flights to the most beautiful tourist destinations" 
+                       data-ar="رحلات طيران مستأجرة مريحة وآمنة إلى أجمل الوجهات السياحية">رحلات طيران مستأجرة مريحة وآمنة إلى أجمل الوجهات السياحية</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                    <div class="bg-jude-orange text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-dollar-sign text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3" 
+                        data-en="Competitive Prices" 
+                        data-ar="أسعار تنافسية">أسعار تنافسية</h3>
+                    <p class="text-gray-600" 
+                       data-en="We offer the best prices in the market with special offers throughout the year" 
+                       data-ar="نقدم أفضل الأسعار في السوق مع عروض مميزة طوال العام">نقدم أفضل الأسعار في السوق مع عروض مميزة طوال العام</p>
+                </div>
+                
+                <div class="text-center p-6 rounded-lg hover:shadow-lg transition-shadow">
+                    <div class="bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3" 
+                        data-en="Excellent Customer Service" 
+                        data-ar="خدمة عملاء متميزة">خدمة عملاء متميزة</h3>
+                    <p class="text-gray-600" 
+                       data-en="Customer service team available 24/7 to assist you" 
+                       data-ar="فريق خدمة العملاء متاح على مدار الساعة لمساعدتك">فريق خدمة العملاء متاح على مدار الساعة لمساعدتك</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flights Section -->
+    <section id="flights" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" 
+                    data-en="Our Tourist Destinations" 
+                    data-ar="وجهاتنا السياحية">وجهاتنا السياحية</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" 
+                   data-en="Choose from a wide range of premium tourist destinations" 
+                   data-ar="اختر من بين مجموعة واسعة من الوجهات السياحية المميزة">اختر من بين مجموعة واسعة من الوجهات السياحية المميزة</p>
+            </div>
+            
+            <!-- Search Filter -->
+            <div class="max-w-md mx-auto mb-8">
+                <div class="relative">
+                    <input type="text" id="destination-search" placeholder="ابحث عن وجهة..." 
+                           class="w-full px-4 py-3 pr-12 rounded-lg border border-gray-300 focus:outline-none focus:border-jude-blue">
+                    <i class="fas fa-search absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                </div>
+            </div>
+            
+            <!-- Flights Grid -->
+            <div id="flights-grid">
+                <!-- Flight cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Flight Search Widget Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4" 
+                    data-en="Search Scheduled Flights" 
+                    data-ar="ابحث عن الرحلات المجدولة">ابحث عن الرحلات المجدولة</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" 
+                   data-en="Find and compare flights from airlines around the world" 
+                   data-ar="ابحث وقارن الرحلات من شركات الطيران حول العالم">ابحث وقارن الرحلات من شركات الطيران حول العالم</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
+                <!-- Flight Search Widget -->
+                <div class="flight-search-widget">
+                    <script async src="https://tpscr.com/content?currency=usd&trs=461558&shmarker=669538&show_hotels=true&powered_by=true&locale=en&searchUrl=www.aviasales.com%2Fsearch&primary_override=%2332a8dd&color_button=%2332a8dd&color_icons=%2332a8dd&dark=%23262626&light=%23FFFFFF&secondary=%23FFFFFF&special=%23C4C4C4&color_focused=%2332a8dd&border_radius=0&plain=false&promo_id=7879&campaign_id=100" charset="utf-8"></script>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-gray-500" 
+                       data-en="Compare prices from hundreds of airlines and travel agencies" 
+                       data-ar="قارن الأسعار من مئات شركات الطيران ووكالات السفر">قارن الأسعار من مئات شركات الطيران ووكالات السفر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6" data-ar="من نحن" data-en="About Us">من نحن</h2>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed" data-ar="الجود للسياحة والسفر هي شركة رائدة في مجال السياحة والسفر، نقدم خدمات متميزة في تنظيم الرحلات السياحية والرحلات المستأجرة إلى أجمل الوجهات حول العالم." data-en="Jude Travel Agency is a leading company in tourism and travel, offering exceptional services in organizing tourist trips and charter flights to the most beautiful destinations around the world.">
+                        الجود للسياحة والسفر هي شركة رائدة في مجال السياحة والسفر، نقدم خدمات متميزة في تنظيم الرحلات السياحية 
+                        والرحلات المستأجرة إلى أجمل الوجهات حول العالم.
+                    </p>
+                    <p class="text-gray-600 mb-6 text-lg leading-relaxed" data-ar="نحن نفخر بخدماتنا المتميزة وخبرتنا الطويلة في هذا المجال، ونسعى دائماً لتقديم أفضل تجربة سفر لعملائنا الكرام." data-en="We take pride in our exceptional services and extensive experience in this field, always striving to provide the best travel experience for our valued customers.">
+                        نحن نفخر بخدماتنا المتميزة وخبرتنا الطويلة في هذا المجال، ونسعى دائماً لتقديم أفضل تجربة سفر لعملائنا الكرام.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-jude-blue mb-2">500+</div>
+                            <div class="text-gray-600" data-ar="عميل سعيد" data-en="Happy Customers">عميل سعيد</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-jude-orange mb-2">50+</div>
+                            <div class="text-gray-600" data-ar="وجهة سياحية" data-en="Destinations">وجهة سياحية</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/1c1b77f70820d81b7dc05973b06f982e" 
+                         alt="Al Jude Travel" class="w-64 h-64 rounded-full shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-jude-blue text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</h2>
+                <p class="text-blue-100 max-w-2xl mx-auto" data-ar="نحن هنا لمساعدتك في تخطيط رحلتك المقبلة" data-en="We are here to help you plan your next trip">نحن هنا لمساعدتك في تخطيط رحلتك المقبلة</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="bg-white text-jude-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-ar="اتصل بنا" data-en="Call Us">اتصل بنا</h3>
+                    <p class="text-blue-100">+96265800666</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-white text-jude-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-ar="راسلنا" data-en="Email Us">راسلنا</h3>
+                    <p class="text-blue-100">reservations@aljudetravels.com</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-white text-jude-blue w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3" data-ar="زورنا" data-en="Visit Us">زورنا</h3>
+                    <p class="text-blue-100" data-ar="عمان، الأردن" data-en="Amman, Jordan">عمان، الأردن</p>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="max-w-2xl mx-auto mt-12">
+                <form id="contact-form" class="bg-white rounded-lg p-8 text-gray-800">
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2" data-ar="الاسم" data-en="Name">الاسم</label>
+                            <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-jude-blue">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2" data-ar="رقم الهاتف" data-en="Phone Number">رقم الهاتف</label>
+                            <input type="tel" name="phone" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-jude-blue">
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-semibold mb-2" data-ar="الوجهة المطلوبة" data-en="Desired Destination">الوجهة المطلوبة</label>
+                        <select name="destination" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-jude-blue">
+                            <option value="" data-ar="اختر الوجهة" data-en="Select Destination">اختر الوجهة</option>
+                            <option value="sharm" data-ar="شرم الشيخ" data-en="Sharm El-Sheikh">شرم الشيخ</option>
+                            <option value="istanbul" data-ar="اسطنبول" data-en="Istanbul">اسطنبول</option>
+                            <option value="trabzon" data-ar="طرابزون" data-en="Trabzon">طرابزون</option>
+                            <option value="batumi" data-ar="باتومي" data-en="Batumi">باتومي</option>
+                            <option value="tbilisi" data-ar="تبليسي" data-en="Tbilisi">تبليسي</option>
+                            <option value="cairo" data-ar="القاهرة" data-en="Cairo">القاهرة</option>
+                            <option value="jeddah" data-ar="جدة" data-en="Jeddah">جدة</option>
+                            <option value="medina-jeddah" data-ar="المدينة المنورة وجدة" data-en="Medina and Jeddah">المدينة المنورة وجدة</option>
+                            <option value="dubai" data-ar="دبي" data-en="Dubai">دبي</option>
+                        </select>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 font-semibold mb-2" data-ar="رسالتك" data-en="Your Message">رسالتك</label>
+                        <textarea name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-jude-blue"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-jude-blue hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition-colors" data-ar="إرسال الرسالة" data-en="Send Message">
+                        <i class="fas fa-paper-plane ml-2"></i>
+                        إرسال الرسالة
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-3 space-x-reverse mb-4 md:mb-0">
+                    <img src="https://page.gensparksite.com/v1/base64_upload/1c1b77f70820d81b7dc05973b06f982e" 
+                         alt="Al Jude Travel Logo" class="h-8 w-8 rounded-full">
+                    <div>
+                        <div class="font-bold">AL JUDE</div>
+                        <div class="text-sm text-gray-300" data-ar="الجود للسياحة والسفر" data-en="Jude Travel Agency">الجود للسياحة والسفر</div>
+                    </div>
+                </div>
+                
+                <div class="flex space-x-6 space-x-reverse">
+                    <a href="https://www.facebook.com/share/16wM87cH2s/?mibextid=wwXIfr" target="_blank" class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/aljudetraveltourism?igsh=dmVlZWxsYjdncG5u&utm_source=qr" target="_blank" class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://wa.me/962777066005" target="_blank" class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400">
+                <p data-ar="&copy; 2024 الجود للسياحة والسفر. جميع الحقوق محفوظة." data-en="&copy; 2024 Jude Travel Agency. All rights reserved.">&copy; 2024 الجود للسياحة والسفر. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <!-- Booking Form Modal -->
+    <div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-2xl w-full max-h-screen overflow-hidden flex flex-col">
+            <!-- Modal Header -->
+            <div class="bg-jude-blue text-white px-6 py-4 flex justify-between items-center flex-shrink-0">
+                <div class="flex items-center space-x-3 space-x-reverse">
+                    <i class="fas fa-plane text-xl"></i>
+                    <h3 class="text-xl font-bold" data-ar="حجز رحلة" data-en="Book Flight">حجز رحلة</h3>
+                </div>
+                <button id="booking-modal-close" class="text-white hover:text-gray-200 p-2 rounded-full hover:bg-white hover:bg-opacity-20 transition-colors">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Content -->
+            <div class="p-6 overflow-y-auto flex-1">
+                <form id="booking-form" class="space-y-6">
+                    <!-- Destination Info -->
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <div class="flex items-center mb-2">
+                            <i class="fas fa-map-marker-alt text-jude-blue ml-2"></i>
+                            <span class="font-semibold text-gray-800" data-ar="الوجهة المختارة:" data-en="Selected Destination:">الوجهة المختارة:</span>
+                        </div>
+                        <div id="booking-destination" class="text-lg font-bold text-jude-blue">شرم الشيخ، مصر</div>
+                    </div>
+                    
+                    <!-- Airline Selection -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2" data-ar="شركة الطيران:" data-en="Airline:">شركة الطيران:</label>
+                        <select id="booking-airline" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-jude-blue focus:border-transparent">
+                            <option value="" data-ar="اختر شركة الطيران..." data-en="Select airline...">اختر شركة الطيران...</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Package Selection -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2" data-ar="نوع الباقة:" data-en="Package Type:">نوع الباقة:</label>
+                        <select id="booking-package" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-jude-blue focus:border-transparent">
+                            <option value="" data-ar="اختر الباقة..." data-en="Select package...">اختر الباقة...</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Passenger Counts -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" data-ar="البالغون (12+ سنة):" data-en="Adults (12+ years):">البالغون (12+ سنة):</label>
+                            <select id="booking-adults" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-jude-blue focus:border-transparent">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" data-ar="الأطفال (2-11 سنة):" data-en="Children (2-11 years):">الأطفال (2-11 سنة):</label>
+                            <select id="booking-children" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-jude-blue focus:border-transparent">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" data-ar="الرضع (0-2 سنة):" data-en="Infants (0-2 years):">الرضع (0-2 سنة):</label>
+                            <select id="booking-infants" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-jude-blue focus:border-transparent">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Trip Type -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2" data-ar="نوع الرحلة:" data-en="Trip Type:">نوع الرحلة:</label>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            <label class="flex items-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="trip-type" value="round-trip" checked class="ml-3">
+                                <span data-ar="ذهاب وإياب" data-en="Round Trip">ذهاب وإياب</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="trip-type" value="one-way-outbound" class="ml-3">
+                                <span data-ar="ذهاب فقط" data-en="One Way (Outbound)">ذهاب فقط</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-300 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="trip-type" value="one-way-return" class="ml-3">
+                                <span data-ar="عودة فقط" data-en="One Way (Return)">عودة فقط</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Date Selection -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" data-ar="تاريخ المغادرة:" data-en="Departure Date:">تاريخ المغادرة:</label>
+                            <input type="date" id="booking-departure" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-jude-blue focus:border-transparent">
+                        </div>
+                        <div id="return-date-container">
+                            <label class="block text-sm font-medium text-gray-700 mb-2" data-ar="تاريخ العودة:" data-en="Return Date:">تاريخ العودة:</label>
+                            <input type="date" id="booking-return" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-jude-blue focus:border-transparent">
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Information -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" data-ar="رقم الهاتف:" data-en="Phone Number:">رقم الهاتف:</label>
+                            <input type="tel" id="booking-phone" required placeholder="+96265800666" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-jude-blue focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" data-ar="البريد الإلكتروني (اختياري):" data-en="Email (Optional):">البريد الإلكتروني (اختياري):</label>
+                            <input type="email" id="booking-email" placeholder="reservations@aljudetravels.com" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-jude-blue focus:border-transparent">
+                        </div>
+                    </div>
+                    
+                    <!-- Special Requests -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2" data-ar="ملاحظات خاصة (اختياري):" data-en="Special Requests (Optional):">ملاحظات خاصة (اختياري):</label>
+                        <textarea id="booking-notes" rows="3" placeholder="أي متطلبات خاصة أو ملاحظات..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-jude-blue focus:border-transparent"></textarea>
+                    </div>
+                    
+                    <!-- Price Display -->
+                    <div id="booking-price-display" class="bg-green-50 border border-green-200 rounded-lg p-4 hidden">
+                        <div class="flex items-center justify-between">
+                            <span class="text-lg font-semibold text-gray-800" data-ar="السعر الإجمالي:" data-en="Total Price:">السعر الإجمالي:</span>
+                            <span id="booking-total-price" class="text-xl font-bold text-green-600">189 دينار</span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="bg-gray-50 px-6 py-4 flex flex-col sm:flex-row gap-3 sm:justify-end">
+                <button type="button" id="booking-cancel" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors" data-ar="إلغاء" data-en="Cancel">إلغاء</button>
+                <button type="submit" form="booking-form" class="px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors flex items-center justify-center" data-ar="إرسال عبر واتساب" data-en="Send via WhatsApp">
+                    <i class="fab fa-whatsapp ml-2"></i>
+                    إرسال عبر واتساب
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
