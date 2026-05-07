@@ -1,0 +1,1763 @@
+/* Custom styles for Jude Travel */
+
+/* RTL Support */
+[dir="rtl"] {
+    direction: rtl;
+}
+
+/* LTR Support */
+[dir="ltr"] {
+    direction: ltr;
+}
+
+/* Language Toggle Button */
+#language-toggle, #mobile-language-toggle {
+    transition: all 0.3s ease;
+}
+
+#language-toggle:hover, #mobile-language-toggle:hover {
+    transform: scale(1.05);
+}
+
+/* LTR Layout Adjustments */
+.ltr .space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(0.75rem * var(--tw-space-x-reverse));
+    margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.ltr .text-right {
+    text-align: left;
+}
+
+.ltr .ml-2 {
+    margin-left: 0.5rem;
+    margin-right: 0;
+}
+
+.ltr .mr-2 {
+    margin-right: 0.5rem;
+    margin-left: 0;
+}
+
+/* Language-specific font adjustments */
+.ltr {
+    font-family: 'Inter', 'Arial', sans-serif;
+}
+
+.rtl {
+    font-family: 'Cairo', 'Arial', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e40af;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1e3a8a;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Hero Section Background */
+#home {
+    background-image: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    background-size: cover;
+    background-position: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Flight Card Styles - Enhanced Layout */
+.flight-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 600px; /* Ensure minimum height for consistency */
+    position: relative;
+}
+
+.flight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Improved Grid Layout */
+#flights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 24px;
+    align-items: start;
+}
+
+@media (min-width: 768px) {
+    #flights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    #flights-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1440px) {
+    #flights-grid {
+        grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    }
+}
+
+/* Ensure consistent card heights and layout */
+.flight-card-header {
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    color: white;
+    padding: 1.5rem;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.flight-card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    min-height: 450px;
+}
+
+.airline-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.airline-features-section {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.gallery-section {
+    margin-top: auto;
+}
+
+/* Airline Tabs Styles */
+.airline-tabs {
+    border-radius: 8px 8px 0 0;
+}
+
+.airline-tab {
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.airline-tab:hover:not(.border-jude-blue) {
+    background-color: rgba(30, 64, 175, 0.05);
+}
+
+.airline-content {
+    animation: fadeInContent 0.3s ease-in-out;
+}
+
+@keyframes fadeInContent {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced airline comparison table */
+.airline-comparison-table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.airline-comparison-table th {
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    color: white;
+}
+
+.airline-comparison-table tbody tr:hover {
+    background-color: rgba(30, 64, 175, 0.05);
+    transform: scale(1.01);
+    transition: all 0.2s ease;
+}
+
+/* Removed duplicate styles - consolidated above */
+
+.destination-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.departure-info {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+}
+
+.price-tag {
+    background: #f97316;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.duration-badge {
+    background: #10b981;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    margin-left: 0.5rem;
+}
+
+.royal-jordanian-badge {
+    background: #dc2626;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    display: inline-block;
+}
+
+/* Button Styles */
+.btn-primary {
+    background: #1e40af;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background: #1e3a8a;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #1e40af;
+    border: 2px solid #1e40af;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn-secondary:hover {
+    background: #1e40af;
+    color: white;
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Optimizations - Enhanced */
+@media (max-width: 768px) {
+    .destination-name {
+        font-size: 1.25rem;
+    }
+    
+    .hero-title {
+        font-size: 2rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important;
+    }
+    
+    /* Mobile-specific airline tab styling */
+    .airline-tab {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.75rem;
+    }
+    
+    .airline-tab span {
+        font-size: 0.65rem;
+    }
+    
+    /* Compact mobile pricing */
+    .price-tag {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .duration-badge {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    /* Mobile departure info */
+    .departure-info {
+        padding: 0.5rem;
+        font-size: 0.75rem;
+        margin: 0.375rem 0;
+    }
+    
+    /* Mobile one-way prices */
+    .one-way-prices {
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .one-way-prices .text-xs {
+        font-size: 0.7rem;
+    }
+}
+
+/* Search Input Enhancements */
+#destination-search {
+    transition: all 0.3s ease;
+}
+
+#destination-search:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #1e40af;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Contact Form Enhancements */
+.contact-form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+/* Feature Icons Hover Effects */
+.feature-icon {
+    transition: all 0.3s ease;
+}
+
+.feature-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation Enhancements */
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #f97316;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Success/Error Messages */
+.message {
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    display: none;
+}
+
+.message.success {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #10b981;
+}
+
+.message.error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #ef4444;
+}
+
+.message.show {
+    display: block;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Price Display */
+.price-display {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f97316;
+}
+
+.currency {
+    font-size: 1rem;
+    color: #6b7280;
+}
+
+/* Responsive Grid Enhancements */
+#flights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    align-items: stretch;
+    grid-auto-rows: 1fr;
+    justify-items: stretch;
+}
+
+@media (max-width: 768px) {
+    #flights-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 0.5rem;
+    }
+    
+    .flight-card {
+        min-height: 550px;
+        margin-bottom: 0;
+    }
+    
+    .flight-card-body {
+        padding: 1rem;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .flight-card-header {
+        min-height: 120px;
+        padding: 1rem;
+    }
+    
+    .airline-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    /* Ensure proper spacing on mobile */
+    .airline-content > div {
+        margin-bottom: 0.75rem;
+    }
+    
+    .airline-content > div:last-child {
+        margin-bottom: 0;
+    }
+    
+    /* Mobile gallery adjustments */
+    .gallery-section {
+        margin-top: auto;
+        flex-shrink: 0;
+    }
+    
+    /* Mobile button placement */
+    .flight-card-body button {
+        margin-top: auto;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    #flights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    #flights-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+    }
+}
+
+/* Ensure all cards have equal height and proper layout */
+.flight-card {
+    min-height: 650px;
+    max-height: none;
+}
+
+/* Flex layout for card content */
+.flight-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Ensure proper spacing and alignment */
+.airline-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Push buttons to bottom */
+.flight-card-body .mt-auto {
+    margin-top: auto !important;
+}
+
+/* Consistent airline tab height */
+.airline-tabs {
+    min-height: 80px;
+}
+
+/* Consistent general features section */
+.flight-card .flex-grow {
+    flex-grow: 1;
+}
+
+/* Ensure consistent button area */
+.btn-primary, .btn-secondary {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none;
+    }
+    
+    .flight-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* Modal Styles */
+.flight-comparison-modal {
+    backdrop-filter: blur(2px);
+}
+
+.flight-comparison-modal .bg-white {
+    max-height: calc(100vh - 2rem);
+}
+
+.flight-comparison-modal .overflow-y-auto {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.flight-comparison-modal .overflow-y-auto::-webkit-scrollbar {
+    width: 8px;
+}
+
+.flight-comparison-modal .overflow-y-auto::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+}
+
+.flight-comparison-modal .overflow-y-auto::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+.flight-comparison-modal .overflow-y-auto::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Modal Animations */
+.modal-backdrop {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-backdrop.show {
+    opacity: 1;
+}
+
+.modal-content {
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.modal-content.show {
+    transform: scale(1);
+}
+
+/* Close button hover effects */
+.modal-close-btn {
+    transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.modal-back-btn {
+    transition: all 0.3s ease;
+}
+
+.modal-back-btn:hover {
+    background-color: rgba(30, 64, 175, 0.1);
+    color: #1e40af;
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .flight-card {
+        border: 2px solid #000;
+    }
+    
+    .btn-primary {
+        border: 2px solid #000;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus Indicators */
+.focus-visible {
+    outline: 2px solid #f97316;
+    outline-offset: 2px;
+}
+
+/* Accessibility Enhancements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Hero Slider Styles */
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.hero-slider .slide.active {
+    opacity: 1;
+}
+
+.hero-slider .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Slide Indicators */
+.slide-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 4px;
+}
+
+.slide-indicator.active {
+    background: white;
+    border-color: white;
+    transform: scale(1.2);
+}
+
+.slide-indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: white;
+}
+
+/* Hero Animation Enhancement */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Mobile adjustments for hero slider */
+@media (max-width: 768px) {
+    .hero-slider .slide img {
+        object-position: center center;
+    }
+    
+    .slide-indicator {
+        width: 10px;
+        height: 10px;
+        margin: 0 3px;
+    }
+}
+
+/* Ensure hero content is above slider */
+#home .container {
+    position: relative;
+    z-index: 10;
+}
+
+/* Flight Search Widget Styles */
+.flight-search-widget {
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.flight-search-widget iframe {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Flight Search Widget Section */
+.flight-search-widget::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(30, 64, 175, 0.05), rgba(249, 115, 22, 0.05));
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+/* Mobile responsiveness for flight search widget */
+@media (max-width: 768px) {
+    .flight-search-widget {
+        min-height: 350px;
+        padding: 10px;
+    }
+    
+    .flight-search-widget iframe {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+}
+
+/* Cairo Flights Special Styling */
+.cairo-flights {
+    border: 2px solid rgba(30, 64, 175, 0.1);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(30, 64, 175, 0.08));
+    min-height: 200px;
+}
+
+.cairo-flights h6 {
+    color: #1e40af;
+    border-bottom: 1px solid rgba(30, 64, 175, 0.2);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+}
+
+.cairo-flights .bg-white {
+    border: 1px solid rgba(30, 64, 175, 0.15);
+    transition: all 0.3s ease;
+    min-height: 60px;
+}
+
+.cairo-flights .bg-white:hover {
+    box-shadow: 0 2px 8px rgba(30, 64, 175, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Ensure consistent content height across all cards */
+.airline-content > div {
+    min-height: 300px;
+}
+
+/* Grid Layout Improvements */
+@media (min-width: 1200px) {
+    #flights-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Prevent card overflow issues */
+.flight-card-body {
+    overflow-y: auto;
+}
+
+.one-way-prices {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Enhanced flight time display */
+.cairo-flights .text-gray-600 {
+    font-size: 0.75rem;
+    line-height: 1.2;
+}
+
+/* Price highlight for Cairo flights */
+.cairo-flights .text-jude-orange {
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+/* Mobile adjustments for Cairo flights */
+@media (max-width: 768px) {
+    .cairo-flights .grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .cairo-flights .bg-white {
+        padding: 12px;
+    }
+    
+    .cairo-flights .flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+/* Gallery Images Styling */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Image Modal Styling */
+.image-modal {
+    backdrop-filter: blur(2px);
+    animation: fadeIn 0.3s ease;
+}
+
+.image-modal img {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Gallery Grid Responsive */
+@media (max-width: 768px) {
+    .gallery-item img {
+        height: 60px;
+    }
+}
+
+/* Final Layout Improvements - Eliminate Empty Spaces */
+.gallery-section {
+    flex-shrink: 0;
+}
+
+.airline-content > div {
+    margin-bottom: 0.75rem;
+}
+
+.airline-content > div:last-child {
+    margin-bottom: 0;
+}
+
+.departure-info {
+    background: rgba(248, 250, 252, 1) !important;
+    border: 1px solid #e5e7eb;
+}
+
+.one-way-prices {
+    background: rgba(239, 246, 255, 1) !important;
+    border: 1px solid #dbeafe;
+}
+
+.airline-tabs {
+    margin-bottom: 1rem;
+}
+
+/* Better content distribution */
+.flight-card-body > * {
+    margin-bottom: 1rem;
+}
+
+.flight-card-body > *:last-child {
+    margin-bottom: 0;
+}
+
+/* Consistent card structure */
+.flight-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Prevent cards from growing too tall on larger screens */
+@media (min-width: 1024px) {
+    .flight-card {
+        max-height: 750px;
+    }
+    
+    .flight-card-body {
+        overflow-y: auto;
+    }
+}
+
+/* COMPREHENSIVE MOBILE LAYOUT FIX - ELIMINATE ALL EMPTY SPACES */
+@media (max-width: 768px) {
+    /* Ensure no empty spaces in mobile layout */
+    .flight-card {
+        min-height: 550px !important;
+        max-height: none;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .flight-card-header {
+        flex-shrink: 0;
+        min-height: 100px;
+    }
+    
+    .flight-card-body {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        justify-content: space-between;
+    }
+    
+    /* Mobile airline content distribution */
+    .airline-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        min-height: 300px;
+    }
+    
+    /* Mobile airline tabs - compact */
+    .airline-tabs {
+        flex-shrink: 0;
+        margin-bottom: 0.75rem;
+    }
+    
+    .airline-tab {
+        padding: 0.5rem 0.25rem;
+        text-align: center;
+    }
+    
+    .airline-tab span {
+        display: block;
+        line-height: 1.2;
+    }
+    
+    /* Mobile package sections */
+    .airline-content > div {
+        margin-bottom: 0.5rem;
+        flex-shrink: 0;
+    }
+    
+    .airline-content > div:last-child {
+        margin-bottom: 0;
+        margin-top: auto;
+    }
+    
+    /* Mobile pricing adjustments */
+    .price-tag, .duration-badge {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    /* Mobile departure info - compact */
+    .departure-info {
+        padding: 0.5rem;
+        margin: 0.25rem 0;
+        font-size: 0.75rem;
+    }
+    
+    /* Mobile one-way prices - compact */
+    .one-way-prices {
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+        max-height: 150px;
+        overflow-y: auto;
+    }
+    
+    .one-way-prices .grid {
+        gap: 0.25rem;
+    }
+    
+    .one-way-prices .bg-white {
+        padding: 0.5rem;
+        font-size: 0.7rem;
+    }
+    
+    /* Mobile gallery - compact */
+    .gallery-section {
+        flex-shrink: 0;
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+    }
+    
+    .gallery-section h4 {
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .gallery-item img {
+        height: 50px;
+        object-fit: cover;
+    }
+    
+    /* Mobile general features - compact */
+    .flight-card .border-t {
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+    }
+    
+    .flight-card ul.space-y-1 {
+        margin-bottom: 0.75rem;
+    }
+    
+    .flight-card ul.space-y-1 li {
+        font-size: 0.8rem;
+        line-height: 1.3;
+        margin-bottom: 0.25rem;
+    }
+    
+    /* Mobile button - always at bottom */
+    .flight-card button {
+        margin-top: auto;
+        padding: 0.75rem;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+    }
+    
+    /* Cairo flights mobile optimization */
+    .cairo-flights {
+        min-height: 150px;
+        padding: 0.75rem;
+    }
+    
+    .cairo-flights h6 {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .cairo-flights .bg-white {
+        padding: 0.5rem;
+        min-height: 50px;
+    }
+    
+    .cairo-flights .text-gray-600 {
+        font-size: 0.65rem;
+        line-height: 1.1;
+    }
+    
+    .cairo-flights .text-jude-orange {
+        font-size: 0.75rem;
+    }
+}
+
+/* MOBILE WHITE SPACE ELIMINATION - CRITICAL FIXES */
+@media (max-width: 768px) {
+    /* Reduce excessive section padding on mobile */
+    section.py-16 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    section.py-20 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    /* Reduce container padding */
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    /* Reduce margins between sections */
+    section + section {
+        margin-top: -1rem;
+    }
+    
+    /* Hero section mobile optimization */
+    #home {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+        min-height: auto !important;
+    }
+    
+    /* Flight section optimization */
+    #flights {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+    
+    /* About section optimization */
+    #about {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    /* Contact section optimization */
+    #contact {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    /* Remove excessive margins from flight cards grid */
+    #flights-grid {
+        gap: 1rem !important;
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* Compact hero content */
+    .hero-title {
+        margin-bottom: 1rem !important;
+        font-size: 1.75rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .hero-subtitle {
+        margin-bottom: 1.5rem !important;
+        font-size: 0.95rem !important;
+    }
+    
+    /* Compact about section */
+    #about .grid {
+        gap: 2rem !important;
+    }
+    
+    #about h2 {
+        margin-bottom: 1rem !important;
+        font-size: 1.75rem !important;
+    }
+    
+    #about p {
+        margin-bottom: 1rem !important;
+        font-size: 0.95rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Compact contact section */
+    #contact h2 {
+        margin-bottom: 1rem !important;
+        font-size: 1.75rem !important;
+    }
+    
+    #contact .grid {
+        gap: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    /* Compact contact form */
+    #contact-form {
+        padding: 1.5rem !important;
+        margin-top: 1.5rem !important;
+    }
+    
+    #contact-form .grid {
+        gap: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    #contact-form .mb-6 {
+        margin-bottom: 1rem !important;
+    }
+    
+    #contact-form label {
+        margin-bottom: 0.5rem !important;
+        font-size: 0.9rem !important;
+    }
+    
+    #contact-form input,
+    #contact-form select,
+    #contact-form textarea {
+        padding: 0.75rem !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* Reduce footer padding */
+    footer {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+    
+    footer .border-t {
+        margin-top: 1rem !important;
+        padding-top: 1rem !important;
+    }
+    
+    /* FLIGHT CARDS MOBILE OPTIMIZATION - NO WHITE SPACE */
+    .flight-card {
+        min-height: 500px !important;
+        max-height: 600px !important;
+    }
+    
+    .flight-card-header {
+        min-height: 80px !important;
+        padding: 0.75rem !important;
+    }
+    
+    .flight-card-header h3 {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .flight-card-body {
+        padding: 0.75rem !important;
+        min-height: 380px !important;
+    }
+    
+    /* Airline tabs mobile optimization */
+    .airline-tabs {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .airline-tab {
+        padding: 0.4rem 0.2rem !important;
+        font-size: 0.7rem !important;
+    }
+    
+    .airline-tab span {
+        font-size: 0.65rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    /* Airline content mobile optimization */
+    .airline-content {
+        min-height: 250px !important;
+        max-height: 320px !important;
+        overflow-y: auto;
+    }
+    
+    .airline-content h4 {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .airline-content .mb-3 {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .airline-content .mb-4 {
+        margin-bottom: 0.75rem !important;
+    }
+    
+    /* Price and duration badges */
+    .price-tag {
+        padding: 0.3rem 0.6rem !important;
+        font-size: 0.8rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .duration-badge {
+        padding: 0.2rem 0.4rem !important;
+        font-size: 0.7rem !important;
+    }
+    
+    /* Departure info compact */
+    .departure-info {
+        padding: 0.4rem !important;
+        margin: 0.25rem 0 !important;
+        font-size: 0.7rem !important;
+    }
+    
+    .departure-info i {
+        font-size: 0.7rem !important;
+        margin-left: 0.25rem !important;
+    }
+    
+    /* One-way prices compact */
+    .one-way-prices {
+        padding: 0.5rem !important;
+        margin: 0.4rem 0 !important;
+        max-height: 120px !important;
+    }
+    
+    .one-way-prices .text-xs {
+        font-size: 0.65rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .one-way-prices .grid {
+        gap: 0.25rem !important;
+    }
+    
+    .one-way-prices span {
+        padding: 0.3rem !important;
+        font-size: 0.65rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    /* Features section compact */
+    .airline-features-section {
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .airline-features-section h5 {
+        font-size: 0.8rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+    
+    .airline-features-section ul {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .airline-features-section li {
+        font-size: 0.7rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 0.15rem !important;
+    }
+    
+    .airline-features-section i {
+        font-size: 0.7rem !important;
+        margin-left: 0.25rem !important;
+    }
+    
+    /* General features section compact */
+    .flight-card .border-t {
+        margin-top: 0.5rem !important;
+        padding-top: 0.5rem !important;
+        border-top: 1px solid #e5e7eb !important;
+    }
+    
+    .flight-card .border-t h4 {
+        font-size: 0.8rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+    
+    .flight-card .border-t ul {
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .flight-card .border-t li {
+        font-size: 0.7rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 0.15rem !important;
+    }
+    
+    /* Button section compact */
+    .flight-card .mt-auto {
+        margin-top: 0.5rem !important;
+        padding-top: 0.5rem !important;
+    }
+    
+    .flight-card button {
+        padding: 0.6rem !important;
+        font-size: 0.8rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .flight-card button i {
+        margin-left: 0.25rem !important;
+        font-size: 0.8rem !important;
+    }
+    
+    /* Cairo flights mobile specific */
+    .cairo-flights {
+        padding: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+        min-height: 100px !important;
+        max-height: 180px !important;
+        overflow-y: auto;
+    }
+    
+    .cairo-flights h6 {
+        font-size: 0.75rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+    
+    .cairo-flights .bg-white {
+        padding: 0.4rem !important;
+        margin-bottom: 0.25rem !important;
+        min-height: 40px !important;
+    }
+    
+    .cairo-flights strong {
+        font-size: 0.7rem !important;
+    }
+    
+    .cairo-flights .text-gray-600 {
+        font-size: 0.6rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    .cairo-flights .text-jude-orange {
+        font-size: 0.7rem !important;
+    }
+    
+    /* Gallery section mobile compact */
+    .gallery-section {
+        margin-top: 0.5rem !important;
+        padding-top: 0.5rem !important;
+        border-top: 1px solid #e5e7eb !important;
+    }
+    
+    .gallery-section h4 {
+        font-size: 0.8rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+    
+    .gallery-item img {
+        height: 40px !important;
+        width: 40px !important;
+        object-fit: cover;
+        border-radius: 0.25rem;
+    }
+    
+    /* CRITICAL FIX: Mobile flight info layout - prevent text overlap */
+    .cairo-flights .flex.justify-between {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.25rem !important;
+    }
+    
+    .cairo-flights .text-right {
+        text-align: left !important;
+        margin-top: 0.25rem !important;
+        width: 100% !important;
+    }
+    
+    /* Fix for multi-city flight routes */
+    .cairo-flights strong {
+        display: block !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+        max-width: 100% !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    /* Ensure flight details don't overlap */
+    .cairo-flights .bg-white {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .cairo-flights .bg-white > div {
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .cairo-flights .bg-white > div > div {
+        display: block !important;
+        margin-bottom: 0.25rem !important;
+        word-break: break-word !important;
+    }
+    
+    /* Price display on separate line for mobile */
+    .cairo-flights .font-bold.text-jude-orange {
+        display: block !important;
+        text-align: left !important;
+        margin-top: 0.25rem !important;
+        padding: 0.25rem 0.5rem !important;
+        background: rgba(249, 115, 22, 0.1) !important;
+        border-radius: 0.25rem !important;
+        font-size: 0.8rem !important;
+        border: 1px solid rgba(249, 115, 22, 0.2) !important;
+    }
+    
+    /* CRITICAL FIX: Ensure buttons are always visible on mobile */
+    .flight-card .mt-auto {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        margin-top: auto !important;
+        padding-top: 1rem !important;
+        border-top: 1px solid #e5e7eb !important;
+    }
+    
+    .flight-card button {
+        display: block !important;
+        width: 100% !important;
+        padding: 0.75rem !important;
+        margin: 0 !important;
+        font-size: 0.85rem !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        position: relative !important;
+        z-index: 10 !important;
+    }
+    
+    .flight-card .btn-primary {
+        background-color: #1e40af !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 0.5rem !important;
+        cursor: pointer !important;
+        transition: background-color 0.2s !important;
+    }
+    
+    .flight-card .btn-primary:hover {
+        background-color: #1d4ed8 !important;
+    }
+    
+    .flight-card .btn-secondary {
+        background-color: #6b7280 !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 0.5rem !important;
+        cursor: pointer !important;
+        transition: background-color 0.2s !important;
+    }
+    
+    .flight-card .btn-secondary:hover {
+        background-color: #4b5563 !important;
+    }
+    
+    /* Fix airline content height to ensure buttons are visible */
+    .airline-content {
+        min-height: 200px !important;
+        max-height: 280px !important;
+        overflow-y: auto !important;
+        padding-bottom: 0.5rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    /* Ensure flight card body has proper layout */
+    .flight-card-body {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        height: 100% !important;
+        min-height: 380px !important;
+    }
+    
+    /* Multi-city route text wrapping */
+    .cairo-flights strong,
+    .cairo-flights .text-gray-600 {
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        white-space: normal !important;
+        line-height: 1.3 !important;
+        max-width: 100% !important;
+    }
+    
+    /* Prevent long destination names from overflowing */
+    .flight-card h3,
+    .destination-name {
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+    
+    /* Special handling for Arabic text */
+    [dir="rtl"] .cairo-flights strong,
+    [dir="rtl"] .cairo-flights .text-gray-600 {
+        text-align: right !important;
+        direction: rtl !important;
+    }
+    
+    /* Responsive grid for flight info */
+    .cairo-flights .grid {
+        display: block !important;
+    }
+    
+    .cairo-flights .grid > * {
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    /* UNIVERSAL FIX: All flex layouts in flight cards on mobile */
+    .flight-card .flex.justify-between {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.25rem !important;
+    }
+    
+    .flight-card .flex.justify-between .text-right {
+        text-align: left !important;
+        width: 100% !important;
+        margin-top: 0.25rem !important;
+    }
+    
+    /* Fix for package displays */
+    .flight-card .mb-2 .flex.justify-between {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.25rem !important;
+    }
+    
+    /* Ensure all price tags are visible */
+    .price-tag {
+        display: inline-block !important;
+        margin-bottom: 0.25rem !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+    }
+    
+    .duration-badge {
+        display: inline-block !important;
+        margin-top: 0.25rem !important;
+        white-space: nowrap !important;
+    }
+    
+    /* Fix one-way prices grid */
+    .one-way-prices .grid.grid-cols-2 {
+        display: block !important;
+    }
+    
+    .one-way-prices .grid.grid-cols-2 > * {
+        display: block !important;
+        width: 100% !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    /* Make sure all text is readable */
+    .flight-card * {
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    /* Prevent any hidden overflow */
+    .flight-card,
+    .flight-card-body,
+    .airline-content {
+        overflow: visible !important;
+    }
+    
+    /* Fix button container */
+    .flight-card .space-y-2 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+    
+    /* Ensure proper z-index for buttons */
+    .flight-card button {
+        position: relative !important;
+        z-index: 100 !important;
+        transform: none !important;
+    }
+}
